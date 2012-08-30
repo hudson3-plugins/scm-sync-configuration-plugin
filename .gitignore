@@ -1,0 +1,7 @@
+/.project
+/target
+/.settings
+/.classpath
+/work
+/work-backup
+*.iml

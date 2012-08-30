@@ -1,0 +1,170 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+   
+    <parent>
+        <groupId>org.eclipse.hudson.plugins</groupId>
+        <artifactId>hudson-plugin-parent</artifactId>    
+        <version>3.0.0-RC2</version>
+    </parent>
+
+    <groupId>org.hudsonci.plugins</groupId>
+    <artifactId>scm-sync-configuration</artifactId>
+    <version>0.0.6-h-1-SNAPSHOT</version>
+    <packaging>hpi</packaging>
+  
+    <name>SCM Sync Configuration Plugin</name>
+  
+    <url>http://wiki.hudson-ci.org/display/HUDSON/SCM+Sync+configuration+plugin</url>
+  
+    <description>
+        SCM Sync Configuration Hudson plugin is aimed at 2 main features : 
+        First, keep sync'ed your config.xml (and other ressources) Hudson files 
+        with a SCM repository (backup).
+        Secondly, track changes (and author) made on every file with commit messages.
+    </description>
+  
+    <licenses>
+        <license>
+            <name>The MIT license</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <scm>
+        <connection>scm:git:git://github.com/hudson3-plugins/scm-sync-configuration-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:hudson3-plugins/scm-sync-configuration-plugin.git</developerConnection>
+        <url>https://github.com/hudson3-plugins/scm-sync-configuration-plugin</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>wjprakash</id>
+            <name>Winston Prakash</name>
+            <roles>
+                <role>
+                    Maintainer
+                </role>
+            </roles>
+            <email>
+                winston.prakash@gmail.com
+            </email>
+        </developer>
+        <developer>
+            <id>fcamblor</id>
+            <name>Frederic Camblor</name>
+            <email>fcamblor@gmail.com</email>
+        </developer>
+        <developer>
+            <id>bpaquet</id>
+            <name>Bertrand Paquet</name>
+            <email>bertrand.paquet@gmail.com</email>
+        </developer>
+    </developers>
+  
+    <properties>
+        <powermock.version>1.4.8</powermock.version>
+    </properties>
+    
+  
+    <build>
+        <plugins> 
+            <plugin>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>merge</id>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/resources/META-INF/plexus/components.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>merge-descriptors</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+  
+
+     
+    <dependencies>
+         
+        <dependency>
+            <groupId>org.hudsonci.plugins</groupId>
+            <artifactId>subversion</artifactId>
+            <version>2.3.3</version>
+        </dependency>   
+         
+        <!-- maven scm providers declaration -->
+        
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm</artifactId>
+            <version>1.7</version>
+            <type>pom</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-manager-plexus</artifactId>
+            <version>1.7</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
+            <artifactId>maven-scm-provider-svnjava</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        
+    
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.7</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-svnexe</artifactId>
+            <version>1.7</version>
+        </dependency>
+    
+    
+        <!-- TEST DEPENDENCIES -->
+         
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <scope>test</scope>
+        </dependency>  
+         
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+         
+    </dependencies>
+ 
+</project>
