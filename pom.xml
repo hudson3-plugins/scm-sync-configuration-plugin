@@ -9,7 +9,7 @@
 
     <groupId>org.hudsonci.plugins</groupId>
     <artifactId>scm-sync-configuration</artifactId>
-    <version>0.0.6-h-1-SNAPSHOT</version>
+    <version>0.0.6-h-1</version>
     <packaging>hpi</packaging>
   
     <name>SCM Sync Configuration Plugin</name>
