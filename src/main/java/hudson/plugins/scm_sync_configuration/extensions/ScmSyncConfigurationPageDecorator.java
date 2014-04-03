@@ -12,7 +12,7 @@ public class ScmSyncConfigurationPageDecorator extends PageDecorator{
 	}
 	
 	public ScmSyncConfigurationPlugin getPlugin(){
-		return ScmSyncConfigurationPlugin.getInstance();
+		return new ScmSyncConfigurationPlugin.getInstance();
 	}
 	
 }
