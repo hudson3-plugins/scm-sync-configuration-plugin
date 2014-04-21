@@ -11,8 +11,9 @@ public class ScmSyncConfigurationPageDecorator extends PageDecorator{
 		super(ScmSyncConfigurationPageDecorator.class);
 	}
 	
-	public ScmSyncConfigurationPlugin getPlugin(){
-		return new ScmSyncConfigurationPlugin.getInstance();
-	}
+//        @Override
+//	public ScmSyncConfigurationPlugin getPlugin(){
+//		return new ScmSyncConfigurationPlugin.getInstance();
+//	}
 	
 }
