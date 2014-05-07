@@ -9,7 +9,7 @@
 
     <groupId>org.hudsonci.plugins</groupId>
     <artifactId>scm-sync-configuration</artifactId>
-    <version>0.0.6-h-2-SNAPSHOT</version>
+    <version>0.0.6-h-2</version>
     <packaging>hpi</packaging>
   
     <name>SCM Sync Configuration Plugin</name>
@@ -99,7 +99,7 @@
             <artifactId>subversion</artifactId>
             <version>2.3.8-h-1</version>
         </dependency>   
-         
+        
         <!-- maven scm providers declaration -->
         
         <dependency>
@@ -139,10 +139,7 @@
             <artifactId>maven-scm-provider-svnexe</artifactId>
             <version>1.7</version>
         </dependency>
-    
-    
-        <!-- TEST DEPENDENCIES -->
-         
+        
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
@@ -152,24 +149,19 @@
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito</artifactId>
             <scope>test</scope>
-        </dependency>  
-         
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <artifactId>hudson-test-framework</artifactId>
+            <groupId>org.eclipse.hudson</groupId>
             <type>jar</type>
-            <scope>test</scope>
+            <version>3.2.0-M0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hudson-maven-embedder</artifactId>
+                    <groupId>org.jvnet.hudson</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-         
     </dependencies>
  
 </project>
